@@ -1,0 +1,18 @@
+  <div>
+<input placeholder="  Поиск" type="text" (change)="filterProducts()" [(ngModel)]="name" >
+<button (click)="filterProducts()"> Поиск</button>
+</div>
+
+ <div class="main">
+<ul *ngFor="let item of response">
+  <li>
+<div class="card" >
+  <img src={{item.img}} alt="Джинсы из денима" style="width:150px; height:120px">
+  <p>{{item.name.substr(0,10)}}</p>
+  <p class="price">{{item.price}}$</p>
+  <p>Оценка: {{item.stars}}</p>
+  <p><button><a href={{item.link}}>Перейти на cтраницу с товаром</a></button></p>
+</div>
+</li>
+</ul>
+</div>
